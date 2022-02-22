@@ -18,7 +18,10 @@ romane = Granny.create!(
   first_name: 'Romane',
   last_name: 'MAY',
   born_at: '1916/02/22',
-  user_id: amine.id
+  user_id: amine.id,
+  short_description: 'blablablablablablablablablablablabl',
+  description: 'lorem ipsum dolor qkfjokjzegfoja  ekfgn eafpk kezf nndfpf,paef',
+  fun_fact: 'i love tomato'
 )
 puts "romane created"
 file_romane = URI.open('https://cdn-elle.ladmedia.fr/var/plain_site/storage/images/societe/news/une-grand-mere-atteinte-d-un-cancer-devient-la-star-d-instagram-2689254/46790536-1-fre-FR/Une-grand-mere-atteinte-d-un-cancer-devient-la-star-d-Instagram.jpg')
