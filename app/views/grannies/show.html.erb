@@ -1,2 +1,13 @@
-<h1>Grannies#show</h1>
-<p>Find me in app/views/grannies/show.html.erb</p>
+<div class="container">
+  <h1>Grannies Show</h1>
+  <div>
+    <h2><%= @granny.first_name + ' ' + @granny.last_name %></h2>
+    <p><%= @granny.born_at %><p/>
+    <a href="#">url(<%= @granny.photo_url %>)</a>
+  </div>
+  <div>
+    <button name="button" type="submit" class="btn btn-flat">
+      <i class="fas fa-booking"></i> Book <%= @granny.first_name %>
+    </button>
+  </div>
+</div>
