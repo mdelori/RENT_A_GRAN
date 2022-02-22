@@ -1,37 +1,41 @@
 <div class="container">
 
-  <div class="layout_past_bookings">
-    <div class="inner_layout_past_bookings">
-      <h2>Upcoming grannies</h2>
-      <p><em>Oops!</em>  It looks like you haven't booked any grannies yet.</p>
-      <%= link_to "Book a granny", "#", class: "btn btn-flat align_right" %>
-    </div>
-     <%# <div class="notification">
-        <img src='app/assets/images/logo_granny.png' class="avatar-large" />
-      <div class="notification-content">
-        <p><small>14th March</small></p>
-        <p><strong>Auntie Mirabel</strong> - cooks wonderful lemon cake!</p>
-      </div>
-      <div class="notification-actions">
-        <a href="#">Modify Booking <i class="fas fa-pencil-alt"></i></app/a>
-        <a href="#">Cancel <i class="far fa-trash-alt"></i></a>
-      </div> %>
+  <div class="layout_past_bookings inner_layout_past_bookings">
+
+  <div>
+  <h2>Upcoming grannies</h2>
+
+        <% if Booking.exists? %>
+          <div class="notification">
+            <% current_user.bookings.each do |booking| %>
+              <div>
+                <%= image_tag "logo_granny.png", class: "avatar-large"%>
+                <div class="notification-content">
+                  <p><small><%= booking.reservation_at %></small></p>
+                  <p><strong> <%= booking.granny.first_name %></strong></p>
+                </div>
+                <div class="notification-actions">
+                  <a href="#">Modify Booking <i class="fas fa-pencil-alt"></i></a>
+                  <a href="#">Cancel <i class="far fa-trash-alt"></i></a>
+                </div>
+              <% end %>
+        <% else %>
+          <div>
+            <p><em>Oops!</em>  It looks like you haven't booked any grannies yet.</p>
+            <%= link_to "See grannies", "#", class: "btn btn-flat align_right" %>
+          </div>
+        <% end %>
   </div>
 
-  <% current_user.bookings.each do |booking| %>
-    <%= booking.reservation_at %>
-    <%= booking.granny.first_name %>
-  <% end %>
-  <div class="layout_past_bookings">
-    <div class="inner_layout_past_bookings">
-        <h2>Past grannies</h2>
-        <p>All the grannies you've <em>loved</em>.</p>
-      </div>
+    <div>
+
+    <h2>Past grannies</h2>
+    <p>All the grannies you've <em>loved</em>.</p>
+
       <div class="notification">
       <%= image_tag "logo_granny.png", class: "avatar-large"%>
       <div class="notification-content">
-        <p><small>14th January</small></p>
-        <p><strong>Auntie Mirabel</strong> - cooks wonderful lemon cake!</p>
+        <p><small>14th January</small><strong>Auntie Mirabel</strong> - cooks wonderful lemon cake!</p>
       </div>
       <div class="notification-actions">
         <a href="#">Book again <i class="fas fa-pencil-alt"></i></a>
@@ -56,5 +60,5 @@
       <div class="notification-actions">
         <a href="#">Book again <i class="fas fa-pencil-alt"></i></a>
       </div>
-    </div>
+  </div>
 </div>
