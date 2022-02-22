@@ -2,8 +2,8 @@
   <h1>Grannies Show</h1>
   <div>
     <h2><%= @granny.first_name + ' ' + @granny.last_name %></h2>
-    <p><%= @granny.born_at %><p/>
-    <a href="#">url(<%= @granny.photo_url %>)</a>
+    <p><%= @granny.born_at %></p>
+    <%= f.input :photo, as: :file %>
   </div>
   <div>
     <button name="button" type="submit" class="btn btn-flat">
