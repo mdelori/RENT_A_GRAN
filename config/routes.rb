@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-
   devise_for :users
   root to: 'pages#home'
+
   resources :grannies, only: %i[index show new create] do
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: %i[new create]
   end
-  resources :bookings, only: [:index, :destroy]
+
+  resources :bookings, only: %i[index new create destroy]
 end
