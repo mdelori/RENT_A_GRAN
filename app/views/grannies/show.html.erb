@@ -1,9 +1,7 @@
 <div class="container">
-  <h1>Grannies Show</h1>
   <div>
-    <h2><%= @granny.first_name + ' ' + @granny.last_name %></h2>
+    <h1><strong><%= @granny.first_name + ' ' + @granny.last_name %></strong></h1>
     <p><%= @granny.born_at %></p>
-    <%= cl_image_tag @granny.photo.key, height: 300, width: 400, crop: :fill %>
   </div>
   <%= link_to new_granny_booking_path(@granny) do %>
     <div>
@@ -12,4 +10,14 @@
       </button>
     </div>
   <% end %>
+</div>
+<div class="container my-3">
+  <div class="cards">
+    <%= cl_image_tag @granny.photo.key, height: 300, width: 400, crop: :fill %>
+  </div>
+</div>
+<div class="container" >
+  <H2><strong>Skills</strong></H2>
+  <p><strong><%= @granny.first_name %></strong> est doué pour <strong><%= "(skill)" %></strong> !</p>
+  <p> Les services qu'elle propose sont : <strong><%= "(skill)" %>, <%= "(skill)" %>.</strong></p>
 </div>
