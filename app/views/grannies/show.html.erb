@@ -5,9 +5,11 @@
     <p><%= @granny.born_at %></p>
     <%= cl_image_tag @granny.photo.key, height: 300, width: 400, crop: :fill %>
   </div>
-  <div>
-    <button name="button" type="submit" class="btn btn-flat">
-      <i class="fas fa-booking"></i> Book <%= @granny.first_name %>
-    </button>
-  </div>
+  <%= link_to new_granny_booking_path(@granny) do %>
+    <div>
+      <button name="button" type="submit" class="btn btn-flat">
+        <i class="fas fa-booking"></i> Book <%= @granny.first_name %>
+      </button>
+    </div>
+  <% end %>
 </div>
