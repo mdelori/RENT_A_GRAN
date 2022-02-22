@@ -61,7 +61,6 @@ ActiveRecord::Schema.define(version: 2022_02_22_103322) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "nick_name"
     t.text "short_description"
     t.text "description"
     t.text "fun_fact"
