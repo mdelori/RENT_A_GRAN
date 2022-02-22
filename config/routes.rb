@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # resources :grannies, only: [:index, :show, :new, :create]
   # resources :pages, only: [:home, :profile]
+  resources :grannies, only: [:index]
+  resources :grannies, only: [:show]
 end
