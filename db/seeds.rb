@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require "open-uri"
 
+Booking.destroy_all
 Granny.destroy_all
 User.destroy_all
 puts "Data destroyed"
