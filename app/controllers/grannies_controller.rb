@@ -21,4 +21,8 @@ class GranniesController < ApplicationController
   def set_granny
     @granny = Granny.find(params[:id])
   end
+
+  def granny_params
+    params.require(:granny).permit(:title, :body, :photo)
+  end
 end

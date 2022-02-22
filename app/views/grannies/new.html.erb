@@ -1,13 +1,5 @@
-<h1>Grannies#new</h1>
-<p>Find me in app/views/grannies/new.html.erb</p>
-<%= form_for(@granny) do |f| %>
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %>
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name %>
-  <%= f.label :born_at %>
-  <%= f.date_field :born_at %>
-  <%= f.label :photo_url %>
-  <%= f.number_field :photo_url %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <h1>Grannies#new</h1>
+  <p>Find me in app/views/grannies/new.html.erb</p>
+  <%= render "shared/form" %>
+</div>
