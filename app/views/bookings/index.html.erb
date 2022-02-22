@@ -1,12 +1,12 @@
 <div class="container">
-  <div class="layout_past_bookings inner_layout_past_bookings">
 
   <div>
-    <h2>Upcoming grannies</h2>
-    <% if Booking.exists? %>
-      <div class="notification">
-        <% current_user.bookings.each do |booking| %>
-          <div>
+
+    <div>
+      <h2>Upcoming grannies</h2>
+      <% if Booking.exists? %>
+        <div class="notification">
+          <% current_user.bookings.each do |booking| %>
             <%= image_tag "logo_granny.png", class: "avatar-large"%>
             <div class="notification-content">
               <p><small><%= booking.reservation_at %></small></p>
@@ -17,15 +17,15 @@
               <a href="#">Cancel <i class="far fa-trash-alt"></i></a>
             </div>
           <% end %>
-    <% else %>
-      <div>
-        <p><em>Oops!</em>  It looks like you haven't booked any grannies yet.</p>
-        <%= link_to "See grannies", "#", class: "btn btn-flat align_right" %>
-      </div>
-    <% end %>
-  </div>
+        </div>
+      <% else %>
+          <p><em>Oops!</em>  It looks like you haven't booked any grannies yet.</p>
+          <%= link_to "See grannies", "#", class: "btn btn-flat align_right" %>
+      <% end %>
 
+    </div>
   <div>
+
     <h2>Past grannies</h2>
     <p>All the grannies you've <em>loved</em>.</p>
     <div class="notification">
@@ -37,8 +37,8 @@
         <a href="#">Book again <i class="fas fa-pencil-alt"></i></a>
       </div>
     </div>
-      <div class="notification">
-        <%= image_tag "logo_granny.png", class: "avatar-large"%>
+    <div class="notification">
+      <%= image_tag "logo_granny.png", class: "avatar-large"%>
       <div class="notification-content">
         <p><small>14th January</small></p>
         <p><strong>Granny Marge</strong> - excellent drinking companion...</p>
@@ -47,8 +47,8 @@
         <a href="#">Book again <i class="fas fa-pencil-alt"></i></a>
       </div>
     </div>
-      <div class="notification">
-        <%= image_tag "logo_granny.png", class: "avatar-large"%>
+    <div class="notification">
+      <%= image_tag "logo_granny.png", class: "avatar-large"%>
       <div class="notification-content">
         <p><small>14th January</small></p>
         <p><strong>Granny Eve</strong> - looks after your cats, miaouw!</p>
@@ -56,5 +56,6 @@
       <div class="notification-actions">
         <a href="#">Book again <i class="fas fa-pencil-alt"></i></a>
       </div>
+    </div>
   </div>
 </div>
