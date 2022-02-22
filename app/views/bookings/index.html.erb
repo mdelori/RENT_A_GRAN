@@ -3,9 +3,20 @@
   <div class="layout_past_bookings">
     <div class="inner_layout_past_bookings">
       <h2>Upcoming grannies</h2>
+
+<%# use this if bookings created %>
+          <% current_user.bookings.each do |booking| %>
+            <%= booking.reservation_at %>
+            <%= booking.granny.first_name %>
+          <% end %>
+
+<%# use this if no bookings  %>
       <p><em>Oops!</em>  It looks like you haven't booked any grannies yet.</p>
       <%= link_to "Book a granny", "#", class: "btn btn-flat align_right" %>
     </div>
+
+
+<%# code for front %>
      <%# <div class="notification">
         <img src='app/assets/images/logo_granny.png' class="avatar-large" />
       <div class="notification-content">
@@ -18,10 +29,6 @@
       </div> %>
   </div>
 
-  <% current_user.bookings.each do |booking| %>
-    <%= booking.reservation_at %>
-    <%= booking.granny.first_name %>
-  <% end %>
   <div class="layout_past_bookings">
     <div class="inner_layout_past_bookings">
         <h2>Past grannies</h2>

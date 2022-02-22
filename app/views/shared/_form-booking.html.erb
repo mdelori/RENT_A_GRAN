@@ -1,4 +1,4 @@
 <%= simple_form_for([@granny, @booking]) do |f| %>
   <%= f.input :reservation_at, as: :date, label: 'Reservation date:' %>
-  <%= f.submit %>
+  <%= f.submit value: 'Book!'%>
 <% end %>

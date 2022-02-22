@@ -3,11 +3,13 @@
     <h1><strong><%= @granny.first_name + ' ' + @granny.last_name %></strong></h1>
     <p><%= @granny.born_at %></p>
   </div>
-  <div>
-    <button name="button" type="submit" class="btn btn-flat">
-      <i class="fas fa-booking"></i> Book <%= @granny.first_name %>
-    </button>
-  </div>
+  <%= link_to new_granny_booking_path(@granny) do %>
+    <div>
+      <button name="button" type="submit" class="btn btn-flat">
+        <i class="fas fa-booking"></i> Book <%= @granny.first_name %>
+      </button>
+    </div>
+  <% end %>
 </div>
 <div class="container my-3">
   <div class="cards">

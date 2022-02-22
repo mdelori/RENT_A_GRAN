@@ -14,10 +14,13 @@
 </div>
 <div class="container my-3">
   <div class="cards">
-    <% @grannies.each do |granny| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(<%= cl_image_path granny.photo.key, height: 300, crop: :fill %>);">
-      <%= granny.first_name %>
-      </div>
+    <% @grannies.each do|granny| %>
+      <%= link_to granny_path(granny) do %>
+        <div class="card-category"
+            style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(<%= cl_image_path granny.photo.key, crop: :fill %>)";>
+          <%= granny.first_name %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
