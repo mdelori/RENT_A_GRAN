@@ -3,6 +3,7 @@
   <div>
     <h2><%= @granny.first_name + ' ' + @granny.last_name %></h2>
     <p><%= @granny.born_at %></p>
+    <%= cl_image_tag @granny.photo.key, height: 300, width: 400, crop: :fill %>
   </div>
   <div>
     <button name="button" type="submit" class="btn btn-flat">
