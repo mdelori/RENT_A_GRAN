@@ -1,5 +1,6 @@
 class GranniesController < ApplicationController
-  before_action :set_granny, only: %i[show create]
+  skip_before_action :authenticate_user!, only: %i[index show]
+  before_action :set_granny, only: %i[show]
 
   def index
     @grannies = Granny.all
@@ -13,7 +14,13 @@ class GranniesController < ApplicationController
   end
 
   def create
-    @granny.save
+    @granny = Granny.new(granny_params)
+    @granny.user = current_user
+    if @granny.save!
+      redirect_to granny_path(@granny)
+    else
+      redirect_to new_granny_path
+    end
   end
 
   private
@@ -23,6 +30,16 @@ class GranniesController < ApplicationController
   end
 
   def granny_params
-    params.require(:granny).permit(:title, :body, :photo)
+    params.require(:granny).permit(
+      :first_name,
+      :last_name,
+      :title,
+      :body,
+      :photo,
+      :born_at,
+      :short_description,
+      :description,
+      :fun_fact
+    )
   end
 end
