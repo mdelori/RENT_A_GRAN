@@ -6,8 +6,6 @@ class GranniesController < ApplicationController
   end
 
   def show
-    belongs_to :grannie
-    validates :content, presence: true
   end
 
   def new
