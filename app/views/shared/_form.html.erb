@@ -2,7 +2,7 @@
   <%= f.input :first_name %>
   <%= f.input :last_name %>
   <%= f.input :born_at, start_year: Date.today.year - 110, end_year: Date.today.year - 60 %>
-  <%= f.input :photo_url, as: :file %>
+  <%= f.input :photo, as: :file %>
   <%= f.input :short_description, :as => :text %>
   <%= f.input :description, :as => :text %>
   <%= f.input :fun_fact, :as => :text %>
