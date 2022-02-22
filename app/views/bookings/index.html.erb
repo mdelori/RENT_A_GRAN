@@ -18,6 +18,10 @@
       </div> %>
   </div>
 
+  <% current_user.bookings.each do |booking| %>
+    <%= booking.reservation_at %>
+    <%= booking.granny.first_name %>
+  <% end %>
   <div class="layout_past_bookings">
     <div class="inner_layout_past_bookings">
         <h2>Past grannies</h2>
