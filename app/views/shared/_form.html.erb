@@ -1,10 +1,17 @@
 <%= simple_form_for(@granny) do |f| %>
+  <%= f.input :nickname %>
   <%= f.input :first_name %>
   <%= f.input :last_name %>
   <%= f.input :born_at, start_year: Date.today.year - 110, end_year: Date.today.year - 60 %>
   <%= f.input :photo, as: :file %>
-  <%= f.input :short_description, :as => :text %>
   <%= f.input :description, :as => :text %>
   <%= f.input :fun_fact, :as => :text %>
+  <%= f.input :telephone_number %>
+  <%= f.input :email %>
+  <%= f.input :house_number %>
+  <%= f.input :street %>
+  <%= f.input :postcode %>
+  <%= f.input :city %>
+  <%= f.input :country_name, as: :string %>
   <%= f.submit %>
 <% end %>
