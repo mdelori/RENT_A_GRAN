@@ -4,6 +4,11 @@ class GranniesController < ApplicationController
 
   def index
     @grannies = Granny.all
+    if params[:query].present?
+      @grannies = Granny.where("city ILIKE ?", "%#{params[:query]}%")
+    else
+      @grannies = Granny.all
+    end
   end
 
   def show

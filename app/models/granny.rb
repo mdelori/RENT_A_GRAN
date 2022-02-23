@@ -12,4 +12,7 @@ class Granny < ApplicationRecord
   def address
     house_number + " " + street + " " + city + " " + postcode + " " + country
   end
+  
+  geocoded_by :adress
+  after_validation :geocode, if: :will_save_change_to_adress?
 end
