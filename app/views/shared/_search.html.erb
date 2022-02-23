@@ -1,8 +1,10 @@
-<%= form_tag grannies_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Enter a city"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
+<div class="search-form-control form-group">
+  <%= form_tag grannies_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Enter a city"
+    %>
+    <%= submit_tag "Search", class: "btn btn-flat" %>
+  <% end %>
+</div>
