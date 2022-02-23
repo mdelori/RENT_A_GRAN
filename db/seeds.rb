@@ -12,7 +12,7 @@ Granny.destroy_all
 User.destroy_all
 puts "Data destroyed"
 
-paul = User.create!(email: 'p@schauss.fr', password: 'tototo')
+paul = User.create!(email: 'p@schauss.fr', password: '123456')
 puts "Paul user created"
 
 amine = User.create!(email: 'aaaaaaa@hotmail.com', password: 'zhdbehbd')
@@ -34,9 +34,49 @@ romane = Granny.create!(
   fun_fact: 'i love tomato',
   country_name: 'France'
 )
-puts "romane created"
 file_romane = URI.open('https://cdn-elle.ladmedia.fr/var/plain_site/storage/images/societe/news/une-grand-mere-atteinte-d-un-cancer-devient-la-star-d-instagram-2689254/46790536-1-fre-FR/Une-grand-mere-atteinte-d-un-cancer-devient-la-star-d-Instagram.jpg')
 romane.photo.attach(io: file_romane, filename: 'nes.png', content_type: 'image/png')
+puts "romane created"
+
+yvette = Granny.create!(
+  first_name: 'Yvette',
+  last_name: 'Delcroix',
+  nickname: 'Yvette saint jean la puenta',
+  born_at: Date.parse('1934/09/12'),
+  telephone_number: '0614141414',
+  email: 'yvette@gmail.com',
+  house_number: '2',
+  street: 'rue Masséna',
+  postcode: '69006',
+  city: 'Lyon',
+  user_id: amine.id,
+  description: 'My name is Yvette and i love cooking',
+  fun_fact: 'I hate vegetables',
+  country_name: 'France'
+)
+file_yvette = URI.open('https://pbs.twimg.com/media/EmOV3yCXUAExyqK?format=jpg&name=large')
+yvette.photo.attach(io: file_yvette, filename: 'yvette.png', content_type: 'image/png')
+puts "yvette created"
+
+michele = Granny.create!(
+  first_name: 'Michele',
+  last_name: 'Martin',
+  nickname: 'Mamy suzette',
+  born_at: Date.parse('1916/02/22'),
+  telephone_number: '0614141414',
+  email: 'suzette@gmail.com',
+  house_number: '2',
+  street: 'rue juliette récamier',
+  postcode: '69006',
+  city: 'Lyon',
+  user_id: amine.id,
+  description: 'I am always drunk',
+  fun_fact: 'i love junk food',
+  country_name: 'France'
+)
+puts "Michele created"
+file_michele = URI.open('https://external-preview.redd.it/oOAmSG2KHBAWwtiDDYveTJP8ddm8g-C12KELhKbzNtY.jpg?auto=webp&s=158ff3195794cf24de535bf3f703d45f841c5c84')
+michele.photo.attach(io: file_michele, filename: 'michele.png', content_type: 'image/png')
 
 # Granny.create!( first_name: 'Mirabel', last_name: 'Da Silva', born_at: '1938/12/11', user_id: amine.id, photo_url: 'https://www.bestofrobots.fr/blog/wp-content/uploads/sites/11/2020/12/menage-grand-mere.jpg')
 
