@@ -21,13 +21,17 @@ puts "Amine user created"
 romane = Granny.create!(
   first_name: 'Romane',
   last_name: 'MAY',
-  nickname: 'Roro',
-  email: 'moy@hotmail.com',
-  born_at: '1916/02/22',
+  nickname: 'Tante May',
+  born_at: Date.parse('1916/02/22'),
+  telephone_number: '0614141414',
+  email: 'may@gmail.com',
+  house_number: '20',
+  street: 'rue des Capucins',
+  postcode: '69009',
+  city: 'Lyon',
   user_id: amine.id,
   description: 'lorem ipsum dolor qkfjokjzegfoja  ekfgn eafpk kezf nndfpf,paef',
   fun_fact: 'i love tomato',
-  city: 'lyon',
   country_name: 'France'
 )
 puts "romane created"

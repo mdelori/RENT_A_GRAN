@@ -9,10 +9,10 @@ class Granny < ApplicationRecord
   validates :description, presence: true
   validates :country_name, presence: true
 
-  def address
-    (house_number street postcode city country_name).to_s
-  end
-
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_city?
+
+  def address
+    "#{house_number} #{street}, #{postcode} #{city}, #{country_name}"
+  end
 end
