@@ -6,5 +6,5 @@ class User < ApplicationRecord
 
   has_many :bookings
 
-  validates :picture_url, presence: true
+  #validates :picture_url, presence: true
 end

@@ -18,6 +18,7 @@ class GranniesController < ApplicationController
   end
 
   def show
+    @reviews = @granny.reviews
   end
 
   def new
