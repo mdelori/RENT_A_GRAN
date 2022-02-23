@@ -20,7 +20,7 @@
 </div>
 <div class="container my-3">
   <div class="cards">
-    <%= cl_image_tag @granny.photo.key, height: 300, width: 400, crop: :fill %>
+    <%= cl_image_tag @granny.photo.key, crop: :fill if @granny.photo.attached? %>
   </div>
 </div>
 <div class="container" >
