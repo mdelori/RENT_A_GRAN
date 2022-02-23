@@ -9,6 +9,12 @@ class GranniesController < ApplicationController
     else
       @grannies = Granny.all
     end
+    @markers = @grannies.geocoded.map do |granny|
+      {
+        lat: granny.latitude,
+        lng: granny.longitude
+      }
+    end
   end
 
   def show
@@ -40,6 +46,7 @@ class GranniesController < ApplicationController
       :first_name,
       :last_name,
       :born_at,
+      :photo,
       :description,
       :fun_fact,
       :telephone_number,

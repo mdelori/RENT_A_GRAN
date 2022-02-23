@@ -3,13 +3,18 @@
 <div class="container">
   <div class="row justify-content-center">
     <%= render 'shared/search' %>
-    <div class="col-sm-8">
+    <div class="col-sm-6">
       <div id="movies">
         <% @grannies.each do |granny| %>
           <h2><%= granny.first_name %></h2>
           <p><%= granny.description %></p>
         <% end %>
       </div>
+    </div>
+    <div style="width: 100%; height: 600px;"
+      data-controller="mapbox"
+      data-mapbox-markers-value="<%= @markers.to_json %>"
+      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
 </div>
