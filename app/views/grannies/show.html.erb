@@ -1,15 +1,22 @@
 <div class="container">
   <div>
     <h1><strong><%= @granny.first_name + ' ' + @granny.last_name %></strong></h1>
+    <h2>Rating: [Add!]</h2>
     <p><%= @granny.born_at %></p>
   </div>
-  <%= link_to new_granny_booking_path(@granny) do %>
+    <%= link_to new_granny_booking_path(@granny) do %>
     <div>
       <button name="button" type="submit" class="btn btn-flat">
         <i class="fas fa-booking"></i> Book <%= @granny.first_name %>
       </button>
+      <% end %>
+      <%= link_to new_granny_booking_path(@granny) do %>
+      <button name="button" type="submit" class="btn btn-flat">
+        <i class="fas fa-booking"></i> Rate <%= @granny.first_name %>
+      </button>
     </div>
   <% end %>
+
 </div>
 <div class="container my-3">
   <div class="cards">
@@ -20,4 +27,8 @@
   <H2><strong>Skills</strong></H2>
   <p><strong><%= @granny.first_name %></strong> est doué pour <strong><%= "(skill)" %></strong> !</p>
   <p> Les services qu'elle propose sont : <strong><%= "(skill)" %>, <%= "(skill)" %>.</strong></p>
+</div>
+<div class="container" >
+  <H2><strong>Reviews</strong></H2>
+  <p> [add reviews]</p>
 </div>
