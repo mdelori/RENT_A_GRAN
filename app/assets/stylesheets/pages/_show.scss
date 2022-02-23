@@ -1,14 +1,20 @@
 .facts {
   display: flex;
-  width: 1000px;
-  align-items: space-between;
+  width: 100%;
   margin-bottom: 8px;
-  background: white;
+  background: #F4F4F4;
   padding: 24px 40px;
+  justify-content: space-evenly;
 }
 
 .granny_intro{
-  padding: 10px 40px;
+  background: #fff;
+  padding: 10px 24px;
+  border: 0.8px solid rgb(206, 206, 206);
+  border-radius: 4px;
+  margin-left: 10px;
+  border: 1px solid rgb(218, 141, 0);
+  border-radius: 20px;
 }
 
 .individual_facts{
