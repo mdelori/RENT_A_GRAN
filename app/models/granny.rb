@@ -8,4 +8,6 @@ class Granny < ApplicationRecord
   validates :description, presence: true
   validates :fun_fact, presence: true
 
+  geocoded_by :adress
+  after_validation :geocode, if: :will_save_change_to_adress?
 end
