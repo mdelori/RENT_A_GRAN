@@ -1,0 +1,25 @@
+.facts {
+  display: flex;
+  width: 1000px;
+  align-items: space-between;
+  margin-bottom: 8px;
+  background: white;
+  padding: 24px 40px;
+}
+
+.granny_intro{
+  padding: 10px 40px;
+}
+
+.individual_facts{
+  display: flex;
+  align-items: space-between;
+  flex-direction: column;
+}
+.img_show{
+  border-radius: 10px;
+}
+
+.granny_info {
+  padding-left: 10px;
+}
