@@ -31,15 +31,19 @@ class GranniesController < ApplicationController
 
   def granny_params
     params.require(:granny).permit(
+      :nickname,
       :first_name,
       :last_name,
-      :title,
-      :body,
-      :photo,
       :born_at,
-      :short_description,
       :description,
-      :fun_fact
+      :fun_fact,
+      :telephone_number,
+      :email,
+      :house_number,
+      :street,
+      :postcode,
+      :city,
+      :country_name
     )
   end
 end
