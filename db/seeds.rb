@@ -19,6 +19,7 @@ amine = User.create!(email: 'aaaaaaa@hotmail.com', password: 'zhdbehbd')
 puts "Amine user created"
 
 romane = Granny.create!(
+  nickname: 'Mamie Rommy',
   first_name: 'Romane',
   last_name: 'MAY',
   nickname: 'Tante May',
