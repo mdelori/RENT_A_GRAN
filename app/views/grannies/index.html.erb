@@ -1,2 +1,15 @@
 <h1>Grannies#index</h1>
 <p>Find me in app/views/grannies/index.html.erb</p>
+<div class="container">
+  <div class="row justify-content-center">
+    <%= render 'shared/search' %>
+    <div class="col-sm-8">
+      <div id="movies">
+        <% @grannies.each do |granny| %>
+          <h2><%= granny.first_name %></h2>
+          <p><%= granny.description %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
