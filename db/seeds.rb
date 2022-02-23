@@ -16,12 +16,19 @@ amine = User.create!( email: 'aaaaaaa@hotmail.com', password: 'zhdbehbd')
 puts "User created"
 
 romane = Granny.create!(
-  nickname: 'Mamie Rommy'
+  nickname: 'Mamie Rommy',
   first_name: 'Romane',
   last_name: 'MAY',
-  born_at: '1916/02/22',
+  nickname: 'Tante May',
+  born_at: Date.parse('1916/02/22'),
+  telephone_number: '0614141414',
+  email: 'may@gmail.com',
+  house_number: '20',
+  street: 'rue des Capucins',
+  postcode: '69009',
+  city: 'Lyon',
+  country_name: 'France',
   user_id: amine.id,
-  description: 'blablablablablablablablablablablabl',
   description: 'lorem ipsum dolor qkfjokjzegfoja  ekfgn eafpk kezf nndfpf,paef',
   fun_fact: 'i love tomato'
 )
