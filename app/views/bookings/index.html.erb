@@ -3,9 +3,9 @@
   <div>
     <div>
       <h2>Upcoming grannies</h2>
-      <% if Booking.exists? %>
+      <% if @bookings.any? %>
         <div class="notification">
-          <% current_user.bookings.each do |booking| %>
+          <% @bookings.each do |booking| %>
             <%= image_tag "logo_granny.png", class: "avatar-large"%>
             <div class="notification-content">
               <p><small><%= booking.reservation_at %></small></p>
