@@ -46,6 +46,7 @@ class GranniesController < ApplicationController
       :first_name,
       :last_name,
       :born_at,
+      :photo,
       :description,
       :fun_fact,
       :telephone_number,
