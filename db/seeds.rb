@@ -12,10 +12,10 @@ Granny.destroy_all
 User.destroy_all
 puts "Data destroyed"
 
-paul = User.create!(email: 'p@schauss.fr', password: '123456')
+paul = User.create!(email: 'p@schauss.fr', password: '123456', picture_url: 'https://avatars.githubusercontent.com/u/95611329?v=4')
 puts "Paul user created"
 
-amine = User.create!(email: 'aaaaaaa@hotmail.com', password: 'zhdbehbd')
+amine = User.create!(email: 'amine@hotmail.com', password: '123456', picture_url: 'https://avatars.githubusercontent.com/u/96190452?v=4')
 puts "Amine user created"
 
 romane = Granny.create!(
@@ -49,7 +49,7 @@ yvette = Granny.create!(
   street: 'rue Masséna',
   postcode: '69006',
   city: 'Lyon',
-  user_id: amine.id,
+  user_id: paul.id,
   description: 'My name is Yvette and i love cooking',
   fun_fact: 'I hate vegetables',
   country_name: 'France'
