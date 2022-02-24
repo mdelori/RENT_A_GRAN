@@ -15,10 +15,9 @@
         <span>❤️ save</span>
       </div>
       <div class="interesting_facts">
-        <h3>Special Skills</h3>
-        <div class="ratings">
+        <div class="ratings-flex-box">
           <% @granny.skills.each do |skill| %>
-            <button type="button" class="btn btn-primary btn-sm"><%= skill.name %></button>
+            <span class="skills"><%= skill.name %></span>
           <% end %>
         </div>
       </div>
