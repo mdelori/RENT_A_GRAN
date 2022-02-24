@@ -36,10 +36,6 @@
 
 .flex{
   display: flex;
-  column-gap: 16px;
-}
-
-.flex-facts{
   padding: 24px 40px;
   justify-content: flex-start;
   column-gap: 18px;
@@ -52,7 +48,8 @@
   background: #fff;
   padding: 24px 40px;
   justify-content: flex-start;
-  column-gap: 18px;
+  column-gap: 80px;
+  margin-bottom: -50px;
 }
 
 .granny_intro{
@@ -65,29 +62,77 @@
   width: fit-content;
 }
 
-.margin{
+.book-card{
   margin: 80px 14px;
   padding: 20px 20px;
   border:3px solid #F4F4F4;
-}
-
-.book-card{
-
+  box-shadow: 4px 4px 4px #F4F4F4
 }
 
 .interesting_facts {
-  width: fit-content;
-}
-
-.individual_facts{
+  width: 400px;
   display: flex;
   align-items: space-between;
   flex-direction: column;
 }
+
 .img_show{
   border-radius: 10px;
 }
 
-.granny_info {
-  padding-left: 10px;
+.reviews{
+  margin-top:0px;
+  padding: 10px 10px;
+}
+
+.notification {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  background: white;
+  padding: 8px 16px;
+  flex-direction: column;
+}
+
+.notification-row{
+  display:flex
+}
+
+.notification .notification-content {
+  flex-grow: 1;
+  padding: 0 24px;
+  display: flex;
+  column-gap: 10px;
+  margin-bottom: 17px;
+}
+
+
+.notification p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.notification small {
+  color: #999999;
+  font-weight: bold;
+}
+.notification .notification-actions {
+  opacity: 0;
+  display: flex;
+  transition: ease .3s;
+
+}
+
+.notification:hover .notification-actions {
+  opacity: 1;
+}
+
+.notification .notification-actions a {
+  color: #999999;
+  margin-left: 16px;
+  font-size: 14px;
+}
+
+.notification .notification-actions a:hover {
+  color: #555555;
 }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_24_105910) do
+ActiveRecord::Schema.define(version: 2022_02_24_113455) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,15 @@ ActiveRecord::Schema.define(version: 2022_02_24_105910) do
     t.index ["user_id"], name: "index_grannies_on_user_id"
   end
 
+  create_table "granny_skills", force: :cascade do |t|
+    t.bigint "granny_id", null: false
+    t.bigint "skill_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["granny_id"], name: "index_granny_skills_on_granny_id"
+    t.index ["skill_id"], name: "index_granny_skills_on_skill_id"
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.text "comment"
     t.integer "rating"
@@ -84,6 +93,12 @@ ActiveRecord::Schema.define(version: 2022_02_24_105910) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["granny_id"], name: "index_reviews_on_granny_id"
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -106,5 +121,7 @@ ActiveRecord::Schema.define(version: 2022_02_24_105910) do
   add_foreign_key "bookings", "grannies"
   add_foreign_key "bookings", "users"
   add_foreign_key "grannies", "users"
+  add_foreign_key "granny_skills", "grannies"
+  add_foreign_key "granny_skills", "skills"
   add_foreign_key "reviews", "grannies"
 end

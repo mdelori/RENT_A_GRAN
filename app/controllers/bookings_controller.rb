@@ -4,7 +4,8 @@ class BookingsController < ApplicationController
   before_action :set_user
 
   def index
-    @bookings = @user.bookings
+    @past_bookings = @user.bookings.where("reservation_at < ?", Date.today)
+    @future_bookings = @user.bookings.where("reservation_at > ?", Date.today)
   end
 
   def show
