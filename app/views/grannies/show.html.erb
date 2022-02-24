@@ -8,20 +8,18 @@
     <div class="granny_info">
       <div class="nickname_and_rating">
         <h1><strong><%= @granny.nickname %></strong></h1>
-          <div class="ratings">
-            <h5 class="bold"> ⭐️ 4.89</h5>
-            <h5 class="underlined">25 reviews</h5>
-            <h5>❤️ save</h5>
-          </div>
+        <div class="ratings">
+          <h5 class="bold"> ⭐️ 4.89</h5>
+          <h5 class="underlined">25 reviews</h5>
+          <h5>❤️ save</h5>
+        </div>
       </div>
-
       <div class="interesting_facts">
         <h3>Special Skills</h3>
         <div class="ratings">
-        <p>knitting</p>
-        <p>cat-sitting</p>
-        <p>cake-baking</p>
-        <p>cleaning</p>
+          <% @granny.skills.each do |skill| %>
+            <button type="button" class="btn btn-primary btn-sm"><%= skill.name %></button>
+          <% end %>
         </div>
       </div>
 
