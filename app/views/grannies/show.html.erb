@@ -6,30 +6,27 @@
     </div>
 
     <div class="granny_info">
-      <div class="nickname_and_rating">
-        <h1><strong><%= @granny.nickname %></strong></h1>
-        <div class="ratings">
-          <h5 class="bold"> ⭐️ 4.89</h5>
-          <h5 class="underlined">25 reviews</h5>
-          <h5>❤️ save</h5>
+      <h1><strong><%= @granny.nickname %></strong></h1>
+      <div class="ratings">
+        <div class="ratings-flex-box">
+          <span class="bold"> ⭐️ 4.89</span>
+          <span class="underlined">25 reviews</span>
         </div>
+        <span>❤️ save</span>
       </div>
       <div class="interesting_facts">
-        <h3>Special Skills</h3>
-        <div class="ratings">
+        <div class="ratings-flex-box">
           <% @granny.skills.each do |skill| %>
-            <button type="button" class="btn btn-primary btn-sm"><%= skill.name %></button>
+            <span class="skills"><%= skill.name %></span>
           <% end %>
         </div>
       </div>
 
       <div class="interesting_facts">
         <h4>Interesting Facts</h4>
-          <ul>
-            <li><strong>Date of birth: </strong><%= @granny.born_at%></li>
-            <li><strong>Fun fact: </strong><%= @granny.fun_fact%></li>
-            <li><strong>Description: </strong><%= @granny.description%></li>
-          </ul>
+        <p>I am <strong> <%= @age %></strong> years old! I know... I'm very very old.</p>
+        <em><%= @granny.fun_fact%> </em>
+        <p><%= @granny.description%></p>
       </div>
     </div>
   </div>
@@ -43,9 +40,11 @@
                   <div class="notification-row">
                     <%= image_tag "logo_granny.png", class: "avatar-large"%>
                     <div class="notification-content">
-                      <p><small><%= current_user.first_name %></small></p>
+                      <div class="notification-row">
+                        <p><small>Paul</small></p>
+                        <p>⭐️ <%= review.rating %></p>
+                      </div>
                       <p> <%= review.comment %></p>
-                      <p>⭐️ <%= review.rating %></p>
                     </div>
                   </div>
                 <% end %>
