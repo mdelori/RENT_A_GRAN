@@ -1,14 +1,38 @@
-#container{
+.container{
   background: #fff;
-  margin:0;
-  border-top:1px solid #F4F4F4;
-  width:100%;
+  border:1px solid #F4F4F4;
+  width:cover;
   padding: 10px;
-  margin: 10px;
+  margin: 0px auto;
 }
 
-.show-title{
+.flex-1{
+  display:flex;
+}
+
+.flex-2{
+  display:flex;
+  justify-content: space-between;
+  column-gap: 200px;
+  margin-right: 142px;
+  margin-left:30px;
+}
+
+.photo{
+  padding: 24px 40px;
+  justify-content: flex-start;
+  column-gap: 80px;
+  padding: 10px 24px;
+  border-radius: 4px;
+  margin-left: 10px;
+}
+
+.granny_info{
   padding: 0px 60px;
+}
+
+.nickname_and_rating{
+
 }
 
 .ratings {
@@ -16,7 +40,8 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  border:1px solid #F4F4F4;
+  column-gap: 16px;
+  width: 550px;
 }
 
 .bold {
@@ -27,41 +52,6 @@
   text-decoration: underline;
 }
 
-.rating{
-  padding: 0 10px;
-  display: flex;
-  justify-content: space-between;
-  column-gap: 16px;
-}
-
-.flex{
-  display: flex;
-  padding: 24px 40px;
-  justify-content: flex-start;
-  column-gap: 18px;
-}
-
-.facts {
-  display: flex;
-  width: 100%;
-  margin-bottom: 8px;
-  background: #fff;
-  padding: 24px 40px;
-  justify-content: flex-start;
-  column-gap: 80px;
-  margin-bottom: -50px;
-}
-
-.granny_intro{
-  background: #fff;
-  padding: 10px 24px;
-  border-radius: 4px;
-  margin-left: 10px;
-  border-radius: 20px;
-  padding: 10px;
-  width: fit-content;
-}
-
 .book-card{
   margin: 80px 14px;
   padding: 20px 20px;
@@ -70,10 +60,8 @@
 }
 
 .interesting_facts {
-  width: 400px;
-  display: flex;
-  align-items: space-between;
-  flex-direction: column;
+  width: fit-content;
+  padding: 20px 10px;
 }
 
 .img_show{
