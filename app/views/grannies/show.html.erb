@@ -1,40 +1,70 @@
 <div class="container">
 
-  <div class="photo">
-    <%= cl_image_tag @granny.photo.key, height: 300, width: 400, crop: :fill, class:"img_show"%>
-  </div>
+  <div class="flex-1">
+    <div class="photo">
+      <%= cl_image_tag @granny.photo.key, height: 300, width: 400, crop: :fill, class:"img_show"%>
+    </div>
 
-  <div class="show-title">
-    <h1><strong><%= @granny.nickname %></strong></h1>
-      <div class="ratings">
-      <div class="rating">
-        <p class="bold"> ⭐️ 4.89</p>
-        <p class="underlined">25 reviews</p>
+    <div class="granny_info">
+      <div class="nickname_and_rating">
+        <h1><strong><%= @granny.nickname %></strong></h1>
+          <div class="ratings">
+            <h5 class="bold"> ⭐️ 4.89</h5>
+            <h5 class="underlined">25 reviews</h5>
+            <h5>❤️ save</h5>
+          </div>
       </div>
-        <p>❤️ save</p>
-      </div>
-  </div>
 
-
-
-        <div class="interesting_facts">
-          <h3>Interesting Facts</h3>
-            <ul>
-              <li><strong>Date of birth: </strong><%= @granny.born_at%></li>
-              <li><strong>Fun fact: </strong><%= @granny.fun_fact%></li>
-              <li><strong>Description: </strong><%= @granny.description%></li>
-            </ul>
+      <div class="interesting_facts">
+        <h3>Special Skills</h3>
+        <div class="ratings">
+        <p>knitting</p>
+        <p>cat-sitting</p>
+        <p>cake-baking</p>
+        <p>cleaning</p>
         </div>
+      </div>
 
-      <div class="book-card">
-        <p><strong>Book <%= @granny.nickname %></strong></p>
+      <div class="interesting_facts">
+        <h4>Interesting Facts</h4>
+          <ul>
+            <li><strong>Date of birth: </strong><%= @granny.born_at%></li>
+            <li><strong>Fun fact: </strong><%= @granny.fun_fact%></li>
+            <li><strong>Description: </strong><%= @granny.description%></li>
+          </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class=flex-2>
+    <div>
+      <h2>Reviews</h2>
+            <% if @reviews.any? %>
+              <div class="notification">
+              <% @reviews.each do |review| %>
+                  <div class="notification-row">
+                    <%= image_tag "logo_granny.png", class: "avatar-large"%>
+                    <div class="notification-content">
+                      <p><small><%= current_user.first_name %></small></p>
+                      <p> <%= review.comment %></p>
+                      <p>⭐️ <%= review.rating %></p>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            <% else %>
+              <p>  There are no reviews for <%=@granny.nickname%> yet.</p>
+            <%end %>
+    </div>
+
+     <div class="book-card">
+        <p><strong>Book <%= @granny.nickname %>!</strong></p>
         <ul>
           <li><%= @granny.email %></li>
           <li><%= @granny.telephone_number %></li>
           <li><%= @granny.address %></li>
         </ul>
-
-          <div class="">
+          <div>
             <%= link_to new_granny_booking_path(@granny) do %>
               <button name="button" type="submit" class="btn btn-flat">
               <i class="fas fa-booking"></i> Book <%= @granny.nickname %>
@@ -42,26 +72,5 @@
               <% end %>
           </div>
       </div>
-    </div>
-
-    <h2>Reviews</h2>
-    <% if @reviews.any? %>
-      <div class="notification">
-      <% @reviews.each do |review| %>
-          <div class="notification-row">
-            <%= image_tag "logo_granny.png", class: "avatar-large"%>
-            <div class="notification-content">
-              <p><small><%= current_user.first_name %></small></p>
-              <p> <%= review.comment %></p>
-              <p>⭐️ <%= review.rating %></p>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    <% else %>
-      <p>  There are no reviews for <%=@granny.nickname%> yet.</p>
-    <%end %>
-
-
   </div>
 </div>

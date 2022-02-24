@@ -1,37 +1,21 @@
 .container{
   background: #fff;
   border:1px solid #F4F4F4;
-  width:100%;
+  width:cover;
   padding: 10px;
-  margin: 10px;
+  margin: 0px auto;
+}
+
+.flex-1{
   display:flex;
 }
 
-.show-title{
-  padding: 0px 60px;
-}
-
-.ratings {
-  padding: 0 10px;
-  display: flex;
-  align-items: flex-end;
+.flex-2{
+  display:flex;
   justify-content: space-between;
-  border:1px solid #F4F4F4;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.underlined{
-  text-decoration: underline;
-}
-
-.rating{
-  padding: 0 10px;
-  display: flex;
-  justify-content: space-between;
-  column-gap: 16px;
+  column-gap: 200px;
+  margin-right: 142px;
+  margin-left:30px;
 }
 
 .photo{
@@ -43,6 +27,31 @@
   margin-left: 10px;
 }
 
+.granny_info{
+  padding: 0px 60px;
+}
+
+.nickname_and_rating{
+
+}
+
+.ratings {
+  padding: 0 10px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  column-gap: 16px;
+  width: 550px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.underlined{
+  text-decoration: underline;
+}
+
 .book-card{
   margin: 80px 14px;
   padding: 20px 20px;
@@ -51,10 +60,8 @@
 }
 
 .interesting_facts {
-  width: 400px;
-  display: flex;
-  align-items: space-between;
-  flex-direction: column;
+  width: fit-content;
+  padding: 20px 10px;
 }
 
 .img_show{
