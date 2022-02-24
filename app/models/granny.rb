@@ -1,6 +1,7 @@
 class Granny < ApplicationRecord
   belongs_to :user
   has_many :reviews
+  has_many :granny_skills
   has_many :skills, through: :granny_skills
   has_one_attached :photo
   validates :nickname, presence: true
