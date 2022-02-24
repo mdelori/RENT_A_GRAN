@@ -1,6 +1,6 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.radiofrance.fr/s3/cruiser-production/2020/02/77d46748-9d7d-4d44-9b2d-f7010354ab6d/870x489_grandmere.jpg);">
   <div class="container">
-    <h1>Rent a <strong>Granny</strong> for <strong>the day ❤️</strong></h1>
+    <h1>Rent a <strong>Granny</strong> for <strong>the day</strong></h1>
     <p>Check out our grannies !</p>
     <%= render "shared/search" %>
   </div>
@@ -10,8 +10,11 @@
     <% @grannies.each do|granny| %>
       <%= link_to granny_path(granny) do %>
         <div class="card-category"
-            style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(<%= cl_image_path granny.photo.key, crop: :fill %>)";>
-          <%= granny.first_name %>
+             style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(<%= cl_image_path granny.photo.key, crop: :fill %>)";>
+          <div class="content d-flex justify-content-between w-100">
+            <div class="first-name"><%= granny.first_name %></div>
+            <div class="price"><%= granny.price %> €</div>
+          </div>
         </div>
       <% end %>
     <% end %>

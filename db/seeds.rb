@@ -32,7 +32,8 @@ romane = Granny.create!(
   user_id: amine.id,
   description: 'lorem ipsum dolor qkfjokjzegfoja  ekfgn eafpk kezf nndfpf,paef',
   fun_fact: 'i love tomato',
-  country_name: 'France'
+  country_name: 'France',
+  price: 12
 )
 file_romane = URI.open('https://cdn-elle.ladmedia.fr/var/plain_site/storage/images/societe/news/une-grand-mere-atteinte-d-un-cancer-devient-la-star-d-instagram-2689254/46790536-1-fre-FR/Une-grand-mere-atteinte-d-un-cancer-devient-la-star-d-Instagram.jpg')
 romane.photo.attach(io: file_romane, filename: 'nes.png', content_type: 'image/png')
@@ -52,7 +53,9 @@ yvette = Granny.create!(
   user_id: paul.id,
   description: 'My name is Yvette and i love cooking',
   fun_fact: 'I hate vegetables',
-  country_name: 'France'
+  country_name: 'France',
+  price: 117
+
 )
 file_yvette = URI.open('https://pbs.twimg.com/media/EmOV3yCXUAExyqK?format=jpg&name=large')
 yvette.photo.attach(io: file_yvette, filename: 'yvette.png', content_type: 'image/png')
@@ -72,7 +75,8 @@ michele = Granny.create!(
   user_id: amine.id,
   description: 'I am always drunk',
   fun_fact: 'i love junk food',
-  country_name: 'France'
+  country_name: 'France',
+  price: 12
 )
 puts "Michele created"
 file_michele = URI.open('https://external-preview.redd.it/oOAmSG2KHBAWwtiDDYveTJP8ddm8g-C12KELhKbzNtY.jpg?auto=webp&s=158ff3195794cf24de535bf3f703d45f841c5c84')
