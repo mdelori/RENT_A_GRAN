@@ -1,10 +1,10 @@
-#container{
+.container{
   background: #fff;
-  margin:0;
-  border-top:1px solid #F4F4F4;
+  border:1px solid #F4F4F4;
   width:100%;
   padding: 10px;
   margin: 10px;
+  display:flex;
 }
 
 .show-title{
@@ -34,32 +34,13 @@
   column-gap: 16px;
 }
 
-.flex{
-  display: flex;
-  padding: 24px 40px;
-  justify-content: flex-start;
-  column-gap: 18px;
-}
-
-.facts {
-  display: flex;
-  width: 100%;
-  margin-bottom: 8px;
-  background: #fff;
+.photo{
   padding: 24px 40px;
   justify-content: flex-start;
   column-gap: 80px;
-  margin-bottom: -50px;
-}
-
-.granny_intro{
-  background: #fff;
   padding: 10px 24px;
   border-radius: 4px;
   margin-left: 10px;
-  border-radius: 20px;
-  padding: 10px;
-  width: fit-content;
 }
 
 .book-card{
