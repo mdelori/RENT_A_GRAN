@@ -84,8 +84,7 @@ michele.photo.attach(io: file_michele, filename: 'michele.png', content_type: 'i
 
 puts "#{Granny.count} grannies created"
 
-
-skill = Skill.new(name: "Cooking")
-skill.granny = granny
-skill.save
-puts 'Skill "cooking" created successfully'
+# skill = Skill.new(name: "Cooking")
+# skill.granny = granny
+# skill.save
+# puts 'Skill "cooking" created successfully'
