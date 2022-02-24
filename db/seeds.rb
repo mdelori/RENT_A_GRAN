@@ -83,3 +83,9 @@ michele.photo.attach(io: file_michele, filename: 'michele.png', content_type: 'i
 # Granny.create!( first_name: 'Charlotte', last_name: 'LINLIN', born_at: '1942/08/04', user_id: amine.id, photo_url: 'https://img.cuisineaz.com/610x610/2016/08/18/i37244-10-astuces-de-grand-mere-a-connaitre-par-coeur.jpg')
 
 puts "#{Granny.count} grannies created"
+
+
+skill = Skill.new(name: "Cooking")
+skill.granny = granny
+skill.save
+puts 'Skill "cooking" created successfully'
