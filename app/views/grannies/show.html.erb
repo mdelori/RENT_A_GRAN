@@ -43,9 +43,11 @@
                   <div class="notification-row">
                     <%= image_tag "logo_granny.png", class: "avatar-large"%>
                     <div class="notification-content">
-                      <p><small><%= current_user.first_name %></small></p>
+                      <div class="notification-row">
+                        <p><small>Paul</small></p>
+                        <p>⭐️ <%= review.rating %></p>
+                      </div>
                       <p> <%= review.comment %></p>
-                      <p>⭐️ <%= review.rating %></p>
                     </div>
                   </div>
                 <% end %>

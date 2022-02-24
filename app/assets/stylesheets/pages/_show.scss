@@ -16,7 +16,6 @@
   column-gap: 80px;
   padding: 10px 24px;
   border-radius: 4px;
-  margin-left: 10px;
 }
 
 .granny_info{
@@ -72,17 +71,18 @@
   background: white;
   padding: 8px 16px;
   flex-direction: column;
+  width: 395px;
 }
 
 .notification-row{
-  display:flex
+  display:flex;
+  justify-content: space-between;
+  width: 277px
 }
 
 .notification .notification-content {
   flex-grow: 1;
   padding: 0 24px;
-  display: flex;
-  column-gap: 10px;
   margin-bottom: 17px;
 }
 
