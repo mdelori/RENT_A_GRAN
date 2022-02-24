@@ -10,8 +10,11 @@
     <% @grannies.each do|granny| %>
       <%= link_to granny_path(granny) do %>
         <div class="card-category"
-            style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(<%= cl_image_path granny.photo.key, crop: :fill %>)";>
-          <%= granny.first_name %>
+             style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(<%= cl_image_path granny.photo.key, crop: :fill %>)";>
+          <div class="content d-flex justify-content-between w-100">
+            <div class="first-name"><%= granny.first_name %></div>
+            <div class="price"><%= granny.price %> €</div>
+          </div>
         </div>
       <% end %>
     <% end %>
