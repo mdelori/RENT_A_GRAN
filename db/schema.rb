@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 2022_02_24_113455) do
     t.string "country_name"
     t.float "latitude"
     t.float "longitude"
+    t.integer "price"
     t.index ["user_id"], name: "index_grannies_on_user_id"
   end
 
