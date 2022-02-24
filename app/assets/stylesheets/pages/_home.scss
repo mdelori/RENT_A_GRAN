@@ -28,19 +28,19 @@ a {
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
-.search-form-control {
+.search-form-control .btn.btn-flat {
   position: relative;
+  width: 14%;
+  left: -14%;
+}
+
+.form-control {
+  width: 40%;
 }
 
 .search-form-control .btn {
   position: absolute;
-  top: 8px;
-  bottom: 8px;
   right: 8px;
-}
-
-.form-control {
-  width: 50%;
 }
 
 .search-form-control .form-control {
@@ -48,11 +48,6 @@ a {
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   border: 1px solid #E7E7E7;
   border-radius: 5px;
-}
-
-.btn.btn-flat {
-  width: 14%;
-  left: 35%;
 }
 
 // Smallest device
