@@ -23,12 +23,18 @@ class GranniesController < ApplicationController
 
   def new
     @granny = Granny.new
+    @skills = Skill.all
   end
 
   def create
     @granny = Granny.new(granny_params)
     @granny.user = current_user
     if @granny.save!
+      params[:granny][:skills].each do |skill_id|
+        next if skill_id.empty?
+
+        GrannySkill.create(skill_id: skill_id, granny_id: @granny.id)
+      end
       redirect_to granny_path(@granny)
     else
       redirect_to new_granny_path

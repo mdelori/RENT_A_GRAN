@@ -13,5 +13,7 @@
   <%= f.input :postcode %>
   <%= f.input :city %>
   <%= f.input :country_name, as: :string %>
+  <%= f.input :skills, collection: @skills,
+                      input_html: {multiple: true, data: { controller: 'select2' }} %>
   <%= f.submit %>
 <% end %>

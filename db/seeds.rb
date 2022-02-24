@@ -10,6 +10,8 @@ require "open-uri"
 Booking.destroy_all
 Granny.destroy_all
 User.destroy_all
+GrannySkill.destroy_all
+Skill.destroy_all
 puts "Data destroyed"
 
 paul = User.create!(email: 'p@schauss.fr', password: '123456', picture_url: 'https://avatars.githubusercontent.com/u/95611329?v=4')
@@ -83,8 +85,8 @@ michele.photo.attach(io: file_michele, filename: 'michele.png', content_type: 'i
 # Granny.create!( first_name: 'Charlotte', last_name: 'LINLIN', born_at: '1942/08/04', user_id: amine.id, photo_url: 'https://img.cuisineaz.com/610x610/2016/08/18/i37244-10-astuces-de-grand-mere-a-connaitre-par-coeur.jpg')
 
 puts "#{Granny.count} grannies created"
-
-# skill = Skill.new(name: "Cooking")
-# skill.granny = granny
-# skill.save
-# puts 'Skill "cooking" created successfully'
+skills = ["Knitting", "Cats sitting", "Cake baking", "Cleaning", "Scrabble", "Weed smoking"]
+skills.each do |skill_name|
+  Skill.create!(name: skill_name)
+end
+puts "#{skills.count} skills created successfully"
