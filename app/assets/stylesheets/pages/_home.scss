@@ -33,15 +33,13 @@ a {
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
-.search-form-control .btn.btn-flat {
-  position: relative;
-  width: 14%;
-  left: -14%;
-}
-
-.form-control {
+.search-bar-home {
   width: 40%;
 }
+.search-form-control .btn.btn-flat {
+  position: relative;
+}
+
 
 .search-form-control .btn {
   position: absolute;
