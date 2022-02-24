@@ -1,19 +1,20 @@
 <div class="container">
   <div>
     <h2>Upcoming grannies</h2>
-    <% if @bookings.any? %>
+    <% if @future_bookings.any? %>
       <div class="notification">
-        <% current_user.future_bookings.each do |future_booking| %>
-            <img src="<%= cl_image_path future_booking.granny.photo.key, height: 100, width: 125, crop: :fill, class: "avatar-large" %>" />
+        <% @future_bookings.each do |future_booking| %>
             <div class="notification-content">
-              <p><strong> <%= future_booking.granny.first_name %></strong></p>
-              <p><%= future_booking.granny.house_number %> <%= future_booking.granny.street %> <%= future_booking.granny.postcode %> <%= future_booking.granny.city %></p>
-              <p>tel: <%= future_booking.granny.telephone_number %></p>
+            <img src="<%= cl_image_path future_booking.granny.photo.key, height: 100, width: 125, crop: :fill, class: "avatar-large" %>" />
               <p><small><%= future_booking.reservation_at %></small></p>
-            </div>
-            <div class="notification-actions">
-              <a href="#">Modify Booking <i class="fas fa-pencil-alt"></i></a>
-              <a href="#">Cancel <i class="far fa-trash-alt"></i></a>
+              <p><strong> <%= future_booking.granny.nickname %></strong></p>
+              <p><%= future_booking.granny.house_number %> <%= future_booking.granny.street %> <%= future_booking.granny.postcode %> <%= future_booking.granny.city %></p>
+              <p><%= future_booking.granny.telephone_number %></p>
+              <p><%= future_booking.granny.email %></p>
+              <div class="notification-actions">
+                <a href="#">Modify Booking <i class="fas fa-pencil-alt"></i></a>
+                <a href="#">Cancel <i class="far fa-trash-alt"></i></a>
+              </div>
             </div>
         <% end %>
       </div>
@@ -25,19 +26,17 @@
 
   <h2>Past grannies</h2>
   <p>All the grannies you've <em>loved</em>.</p>
-  <div class="notification">
-        <% current_user.past_bookings.each do |past_booking| %>
-            <img src="<%= cl_image_path past_booking.granny.photo.key, height: 100, width: 125, crop: :fill, class: "avatar-large" %>" />
-            <div class="notification-content">
-              <p><strong> <%= past_booking.granny.first_name %></strong></p>
-              <p><%= past_booking.granny.house_number %> <%= past_booking.granny.street %> <%= past_booking.granny.postcode %> <%= past_booking.granny.city %></p>
-              <p>tel: <%= past_booking.granny.telephone_number %></p>
-              <p><small><%= past_booking.reservation_at %></small></p>
-            </div>
-            <div class="notification-actions">
-              <a href="#">Modify Booking <i class="fas fa-pencil-alt"></i></a>
-              <a href="#">Cancel <i class="far fa-trash-alt"></i></a>
-            </div>
+     <div class="notification">
+        <% @past_bookings.each do |past_booking| %>
+        <div class="notification-content">
+        <img src="<%= cl_image_path past_booking.granny.photo.key, height: 100, width: 125, crop: :fill, class: "avatar-large" %>" />
+          <p><small><%= past_booking.reservation_at %></small></p>
+          <p><strong> <%= past_booking.granny.nickname %></strong></p>
+          <p><%= past_booking.granny.house_number %> <%= past_booking.granny.street %> <%= past_booking.granny.postcode %> <%= past_booking.granny.city %></p>
+          <div class="notification-actions">
+            <a href="#">Leave a review! <i class="fas fa-pencil-alt"></i></a>
+          </div>
+        </div>
         <% end %>
       </div>
 
