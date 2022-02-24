@@ -1,3 +1,6 @@
+body{
+  min-height: 100vh;
+}
 .flex-1{
   display:flex;
 }
@@ -43,7 +46,8 @@
 }
 
 .skills {
-  background-color: 24deg 100% 90%;
+  background-color: #dd5800cb;
+  color: #fff;
   border-radius: 4px;
   padding: 4px 10px;
 }

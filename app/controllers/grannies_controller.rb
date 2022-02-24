@@ -19,6 +19,7 @@ class GranniesController < ApplicationController
 
   def show
     @reviews = @granny.reviews
+    @age = (((Time.zone.now - @granny.born_at.to_time) / 1.year.seconds).floor)
   end
 
   def new
