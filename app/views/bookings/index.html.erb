@@ -2,16 +2,16 @@
   <div>
     <h2>Upcoming grannies</h2>
     <% if @future_bookings.any? %>
-      <div class="notification">
+      <div class="booking">
         <% @future_bookings.each do |future_booking| %>
-            <div class="notification-content">
+            <div class="booking-content">
             <img src="<%= cl_image_path future_booking.granny.photo.key, height: 100, width: 125, crop: :fill, class: "avatar-large" %>" />
               <p><small><%= future_booking.reservation_at %></small></p>
               <p><strong> <%= future_booking.granny.nickname %></strong></p>
               <p><%= future_booking.granny.house_number %> <%= future_booking.granny.street %> <%= future_booking.granny.postcode %> <%= future_booking.granny.city %></p>
               <p><%= future_booking.granny.telephone_number %></p>
               <p><%= future_booking.granny.email %></p>
-              <div class="notification-actions">
+              <div class="booking-actions">
                 <a href="#">Modify Booking <i class="fas fa-pencil-alt"></i></a>
                 <a href="#">Cancel <i class="far fa-trash-alt"></i></a>
               </div>
@@ -26,14 +26,16 @@
 
   <h2>Past grannies</h2>
   <p>All the grannies you've <em>loved</em>.</p>
-     <div class="notification">
+     <div class="booking">
         <% @past_bookings.each do |past_booking| %>
-        <div class="notification-content">
-        <img src="<%= cl_image_path past_booking.granny.photo.key, height: 100, width: 125, crop: :fill, class: "avatar-large" %>" />
-          <p><small><%= past_booking.reservation_at %></small></p>
-          <p><strong> <%= past_booking.granny.nickname %></strong></p>
-          <p><%= past_booking.granny.house_number %> <%= past_booking.granny.street %> <%= past_booking.granny.postcode %> <%= past_booking.granny.city %></p>
-          <div class="notification-actions">
+        <div class="booking-content">
+          <img src="<%= cl_image_path past_booking.granny.photo.key, height: 100, width: 125, crop: :fill, class: "avatar-large" %>" />
+          <div class="booking-text">
+            <p><small><%= past_booking.reservation_at %></small></p>
+            <p><strong> <%= past_booking.granny.nickname %></strong></p>
+            <p><%= past_booking.granny.house_number %> <%= past_booking.granny.street %> <%= past_booking.granny.postcode %> <%= past_booking.granny.city %></p>
+          </div>
+          <div class="booking-actions">
             <%= link_to new_granny_review_path(past_booking.granny) do %>
               Leave a review!
               <svg xmlns="http://www.w3.org/2000/svg" style="width:1rem" viewBox="0 0 20 20" fill="currentColor">
