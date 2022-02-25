@@ -5,6 +5,10 @@ body{
   display:flex;
 }
 
+.margin-map{
+  margin-bottom: 100px;
+}
+
 .flex-2{
   display:flex;
   justify-content: space-between;
@@ -59,7 +63,7 @@ body{
   box-shadow: 4px 4px 4px #ececec;
   background-color: #FFF;
   position: fixed;
-  top: 90px;
+  bottom: -20px;
   right: 25px;
 }
 
