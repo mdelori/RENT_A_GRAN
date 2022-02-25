@@ -20,6 +20,13 @@ class GranniesController < ApplicationController
   def show
     @reviews = @granny.reviews
     @age = (((Time.zone.now - @granny.born_at.to_time) / 1.year.seconds).floor)
+    average_arr = []
+    @granny.reviews.each do |review|
+      average_arr << review.rating
+    end
+    @average = average_arr.sum/average_arr.count.to_f
+    @total_ratings = average_arr.count
+
   end
 
   def new
