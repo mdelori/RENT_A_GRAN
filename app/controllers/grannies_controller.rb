@@ -28,6 +28,8 @@ class GranniesController < ApplicationController
     @average = @average.round(2)
     @total_ratings = average_arr.count
 
+    @markers = [{ lat: @granny.latitude, lng: @granny.longitude }]
+
   end
 
   def new

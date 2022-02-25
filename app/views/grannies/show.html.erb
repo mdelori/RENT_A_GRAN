@@ -1,5 +1,7 @@
 <div class="container">
-
+  <div class="justify-content-center">
+    <%= link_to "back to grannies", grannies_path , class: " justify-content-center badge rounded-pill bg-secondary" %>
+  </div>
   <div class="flex-1">
     <div class="photo">
       <%= cl_image_tag @granny.photo.key, height: 300, width: 400, crop: :fill, class:"img_show"%>
@@ -34,47 +36,53 @@
       </div>
     </div>
   </div>
-
-  <div class=flex-2>
-    <div>
+  <div class="row">
+    <div class="col-4">
       <h2>Reviews</h2>
-            <% if @reviews.any? %>
-              <div class="notification">
-              <% @reviews.each do |review| %>
-                  <div class="notification-row">
-                    <%= image_tag "logo_granny.png", class: "avatar-large"%>
-                    <div class="notification-content">
-                      <div class="notification-row">
-                        <p><small>Paul</small></p>
-                        <p>⭐️ <%= review.rating %></p>
-                      </div>
-                      <p> <%= review.comment %></p>
-                    </div>
-                  </div>
-                <% end %>
+        <% if @reviews.any? %>
+          <div class="notification">
+            <% @reviews.each do |review| %>
+            <div class="notification-row">
+              <%= image_tag "logo_granny.png", class: "avatar-large"%>
+              <div class="notification-content">
+                <div class="notification-row">
+                  <p><small>Paul</small></p>
+                  <p>⭐️ <%= review.rating %></p>
+                </div>
+                <p> <%= review.comment %></p>
+                </div>
               </div>
-            <% else %>
-              <p>  There are no reviews for <%=@granny.nickname%> yet.</p>
-            <%end %>
+            <% end %>
+          </div>
+        <% else %>
+          <p>  There are no reviews for <%=@granny.nickname%> yet.</p>
+        <%end %>
     </div>
-
-     <div class="book-card">
-        <p><strong>Book <%= @granny.nickname %>!</strong></p>
-      <div class="book-price">
+    <div class="col-8">
+      <div style="width: 100%; height: 400px;"
+        data-controller="mapbox"
+        data-mapbox-markers-value="<%= @markers.to_json %>"
+        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+  <div class="col-4">
+    <div class="book-card">
+      <p><strong>Book <%= @granny.nickname %>!</strong></p>
+      <div class="text-left">
         <p><strong><%= @granny.price %> €</strong>/Day</p>
       </div>
-        <ul>
-          <li><%= @granny.email %></li>
-          <li><%= @granny.telephone_number %></li>
-          <li><%= @granny.address %></li>
-        </ul>
-          <div>
-            <%= link_to new_granny_booking_path(@granny) do %>
-              <button name="button" type="submit" class="btn btn-flat">
-              <i class="fas fa-booking"></i> Book <%= @granny.nickname %>
-              </button>
-              <% end %>
-          </div>
+      <ul>
+        <li><%= @granny.email %></li>
+        <li><%= @granny.telephone_number %></li>
+        <li><%= @granny.address %></li>
+      </ul>
+    <div class="text-center">
+      <%= link_to new_granny_booking_path(@granny) do %>
+        <button name="button" type="submit" class="btn btn-flat">
+        <i class="fas fa-booking"></i> Book <%= @granny.nickname %>
+        </button>
+        <% end %>
       </div>
+    </div>
   </div>
 </div>
