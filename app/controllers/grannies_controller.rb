@@ -5,15 +5,15 @@ class GranniesController < ApplicationController
   def index
     @grannies = Granny.all
     if params[:query].present?
-      @grannies = Granny.where("city ILIKE ?", "%#{params[:query]}%")
-    else
-      @grannies = Granny.all
+      @grannies = @grannies.where("city ILIKE ?", "%#{params[:query]}%")
+    end
+    Skill.all.each do |skill|
+      if params[skill.name.delete(' ')].present?
+        @grannies = @grannies.includes(:granny_skills).where(granny_skills: { skill_id: params[skill.name.delete(' ')].to_i })
+      end
     end
     @markers = @grannies.geocoded.map do |granny|
-      {
-        lat: granny.latitude,
-        lng: granny.longitude
-      }
+      { lat: granny.latitude, lng: granny.longitude }
     end
   end
 

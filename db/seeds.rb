@@ -8,9 +8,9 @@
 require "open-uri"
 
 Booking.destroy_all
+GrannySkill.destroy_all
 Granny.destroy_all
 User.destroy_all
-GrannySkill.destroy_all
 Skill.destroy_all
 puts "Data destroyed"
 
