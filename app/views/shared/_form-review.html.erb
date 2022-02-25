@@ -1,5 +1,5 @@
 <%= simple_form_for([@granny, @review]) do |f| %>
   <%= f.input :comment, as: :text %>
-  <%= f.input :rating, as: :integer %>
+  <%= f.input :rating, collection: (1..5).to_a, label: "Rate your granny" %>
   <%= f.submit value: 'Review!'%>
 <% end %>

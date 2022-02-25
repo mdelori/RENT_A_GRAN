@@ -6,14 +6,15 @@
         <% @future_bookings.each do |future_booking| %>
             <div class="booking-content">
             <img src="<%= cl_image_path future_booking.granny.photo.key, height: 100, width: 125, crop: :fill, class: "avatar-large" %>" />
-              <p><small><%= future_booking.reservation_at %></small></p>
-              <p><strong> <%= future_booking.granny.nickname %></strong></p>
-              <p><%= future_booking.granny.house_number %> <%= future_booking.granny.street %> <%= future_booking.granny.postcode %> <%= future_booking.granny.city %></p>
-              <p><%= future_booking.granny.telephone_number %></p>
-              <p><%= future_booking.granny.email %></p>
-              <div class="booking-actions">
-                <a href="#">Modify Booking <i class="fas fa-pencil-alt"></i></a>
-                <a href="#">Cancel <i class="far fa-trash-alt"></i></a>
+              <div class="booking-text">
+                <p><small><%= future_booking.reservation_at %></small></p>
+                <p><strong> <%= future_booking.granny.nickname %></strong></p>
+                <p><%= future_booking.granny.house_number %> <%= future_booking.granny.street %> <%= future_booking.granny.postcode %> <%= future_booking.granny.city %></p>
+              </div>
+              <div class="booking-flex">
+                <span><strong>Contact Details:</strong></span>
+                <p>📞  <%= future_booking.granny.telephone_number %></p>
+                <p>✉️  <%= future_booking.granny.email %></p>
               </div>
             </div>
         <% end %>
@@ -37,10 +38,10 @@
           </div>
           <div class="booking-actions">
             <%= link_to new_granny_review_path(past_booking.granny) do %>
-              Leave a review!
               <svg xmlns="http://www.w3.org/2000/svg" style="width:1rem" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
               </svg>
+              Leave a review!
             <% end %>
           </div>
         </div>
