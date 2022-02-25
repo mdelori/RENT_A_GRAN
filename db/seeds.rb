@@ -44,7 +44,7 @@ puts "romane created"
 yvette = Granny.create!(
   first_name: 'Yvette',
   last_name: 'Delcroix',
-  nickname: 'Yvette saint jean la puenta',
+  nickname: 'Yvette Saint Jean La Puenta',
   born_at: Date.parse('1934/09/12'),
   telephone_number: '0614141414',
   email: 'yvette@gmail.com',
@@ -53,7 +53,7 @@ yvette = Granny.create!(
   postcode: '69006',
   city: 'Lyon',
   user_id: paul.id,
-  description: 'My name is Yvette and i love cooking',
+  description: 'My name is Yvette and I love cooking. ',
   fun_fact: 'I hate vegetables',
   country_name: 'France',
   price: 2
@@ -89,7 +89,7 @@ michele.photo.attach(io: file_michele, filename: 'michele.png', content_type: 'i
 # Granny.create!( first_name: 'Charlotte', last_name: 'LINLIN', born_at: '1942/08/04', user_id: amine.id, photo_url: 'https://img.cuisineaz.com/610x610/2016/08/18/i37244-10-astuces-de-grand-mere-a-connaitre-par-coeur.jpg')
 
 puts "#{Granny.count} grannies created"
-skills = ["Knitting", "Cats sitting", "Cake baking", "Cleaning", "Scrabble", "Weed smoking"]
+skills = ["Knitting", "catsitting", "Cake baking", "Cleaning", "Scrabble", "Weed smoking"]
 skills.each do |skill_name|
   Skill.create!(name: skill_name)
 end
