@@ -3,9 +3,7 @@
   display: flex;
   align-items: flex-start;
   margin-bottom: 8px;
-  background: white;
   flex-direction: column;
-  width: 800px;
 }
 
 .booking .img{
@@ -15,7 +13,8 @@
 
 .booking-text{
   padding: 10px;
-  width: 400px;
+  width: 354px;
+  border-right: 0.6px solid #F4F4F4;
 }
 .booking-row{
   display:flex;
@@ -25,8 +24,10 @@
 
 .booking .booking-content {
   flex-grow: 1;
-  margin-bottom: 17px;
   display: flex;
+  margin-bottom: 8px;
+  background-color: #fff;
+  width: 800px;
 }
 
 .booking p {
@@ -39,9 +40,18 @@
   font-weight: bold;
 }
 .booking .booking-actions {
-  opacity: 0;
-  display: flex;
+  opacity: 0.6;
   transition: ease .3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.booking-flex{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 16px;
 }
 
 .booking:hover .booking-actions {
