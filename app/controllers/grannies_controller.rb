@@ -32,7 +32,7 @@ class GranniesController < ApplicationController
 
   def new
     @granny = Granny.new
-    @skills = Skill.alls
+    @skills = Skill.all
   end
 
   def create
