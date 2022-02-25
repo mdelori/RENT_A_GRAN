@@ -25,13 +25,14 @@ class GranniesController < ApplicationController
       average_arr << review.rating
     end
     @average = average_arr.sum/average_arr.count.to_f
+    @average = @average.round(2)
     @total_ratings = average_arr.count
 
   end
 
   def new
     @granny = Granny.new
-    @skills = Skill.all
+    @skills = Skill.alls
   end
 
   def create
