@@ -1,38 +1,6 @@
 <div class="container">
   <div class="search-result">
-    <div class="row align-items-center">
-      <div class="search-form-control form-group relative col-4">
-        <%= form_tag grannies_path, method: :get, class: "d-flex" do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Enter a city"
-          %>
-          <%= submit_tag "Search", class: "btn btn-flat" %>
-        <% end %>
-      </div>
-      <div class="skills-bar col-8">
-        <% Skill.all.each do |skill| %>
-          <div class="skill">
-            <% if request.fullpath.include?(skill.name.delete(' ')) %>
-              <%= link_to(
-                skill.name,
-                request.fullpath.chomp("&#{skill.name.delete(' ')}=#{skill.id}"),
-                class: 'btn btn-danger',
-                method: :get
-              )%>
-            <% else %>
-              <%= link_to(
-                skill.name,
-                "#{request.fullpath}&#{skill.name.delete(' ')}=#{skill.id}",
-                class: 'btn btn-primary',
-                method: :get
-              )%>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
-    </div>
+    <%= render 'shared/search' %>
   </div>
   <div class="row justify-content-center">
     <div class="col-8">
