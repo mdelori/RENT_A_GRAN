@@ -9,8 +9,12 @@
       <h1><strong><%= @granny.nickname %></strong></h1>
       <div class="ratings">
         <div class="ratings-flex-box">
-          <span class="bold"> ⭐️ 4.89</span>
-          <span class="underlined">25 reviews</span>
+          <% if @reviews.any? %>
+            <span class="bold"> ⭐️ <%=@average%></span>
+          <% else %>
+            <span> ⭐️ No reviews</span>
+          <% end %>
+          <span class="underlined"> <%= @total_ratings %> reviews</span>
         </div>
         <span>❤️ save</span>
       </div>
