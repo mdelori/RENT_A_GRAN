@@ -41,27 +41,6 @@ file_romane = URI.open('https://cdn-elle.ladmedia.fr/var/plain_site/storage/imag
 romane.photo.attach(io: file_romane, filename: 'nes.png', content_type: 'image/png')
 puts "romane created"
 
-yvette = Granny.create!(
-  first_name: 'Yvette',
-  last_name: 'Delcroix',
-  nickname: 'Yvette Saint Jean La Puenta',
-  born_at: Date.parse('1934/09/12'),
-  telephone_number: '0614141414',
-  email: 'yvette@gmail.com',
-  house_number: '2',
-  street: 'rue Masséna',
-  postcode: '69006',
-  city: 'Lyon',
-  user_id: paul.id,
-  description: 'My name is Yvette and I love cooking. ',
-  fun_fact: 'I hate vegetables',
-  country_name: 'France',
-  price: 2
-
-)
-file_yvette = URI.open('https://pbs.twimg.com/media/EmOV3yCXUAExyqK?format=jpg&name=large')
-yvette.photo.attach(io: file_yvette, filename: 'yvette.png', content_type: 'image/png')
-puts "yvette created"
 
 michele = Granny.create!(
   first_name: 'Michele',
